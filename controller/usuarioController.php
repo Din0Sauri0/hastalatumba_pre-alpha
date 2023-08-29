@@ -1,5 +1,6 @@
 <?php
     session_start();
+
     class usuarioController{
         private $model;
         public function __construct(){
@@ -15,11 +16,14 @@
             if($res == false){
                 return header('Location: form.php');
             }else{
-                $_SESSION['usuario'] = $res->id_usuario;
-                return header('Location: registro.php');
+                
+                $_SESSION["id_usuario"] = $res->id_usuario;
+                return header('Location: ../perfil/index.php');
             }
-            
-            
+        }
+        public function userConfeciones(){
+            $res = $this->model->userConfeciones();
+            return ($res == false) ? $res : 'Ha ocurrido un problema';
         }
     }
 ?>

@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     class usuarioModel{
         private $PDO;
         public function __construct(){
@@ -23,8 +25,13 @@
             $query->execute();
             $res = $query->fetch(PDO::FETCH_OBJ);
             return $res;
-            
-            // return ($query->execute()) ? true : false ;
+        }
+        public function userConfeciones(){
+            $query = $this->PDO->prepare("SELECT * FROM confeciones WHERE id_usuario_id=:id_usuario");
+            $query->bindParam(':id_usuario', $_SESSION['id_usuario']);
+            $query->execute();
+            $res = $query->fetch(PDO::FETCH_OBJ);
+            return $res;
         }
     }
 ?>
