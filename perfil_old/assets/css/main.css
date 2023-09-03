@@ -10062,25 +10062,3 @@ input[type=file] {
 .footer__copyright p a:hover {
   color: var(--clr-theme-1);
 }
-
-.contenedor_sin {
-  display: flex;
-  height: 80vh;
-  padding: 20px;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #fff;
-  border-radius: 5px;
-}
-
-.texto_sin {
-  align-items: center;
-  flex-direction: column;
-  display: flex;
-  color: #fff !important;
-}
-
-.texto_sin>span {
-  font-size: 20px;
-}

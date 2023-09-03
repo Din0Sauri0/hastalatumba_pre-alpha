@@ -1,6 +1,4 @@
 <?php
-    session_start();
-
     class usuarioModel{
         private $PDO;
         public function __construct(){
@@ -26,9 +24,16 @@
             $res = $query->fetch(PDO::FETCH_OBJ);
             return $res;
         }
-        public function userConfeciones(){
+        public function userConfeciones($id_usuario){
             $query = $this->PDO->prepare("SELECT * FROM confeciones WHERE id_usuario_id=:id_usuario");
-            $query->bindParam(':id_usuario', $_SESSION['id_usuario']);
+            $query->bindParam(':id_usuario', $id_usuario);
+            $query->execute();
+            $res = $query->fetchAll(PDO::FETCH_OBJ);
+            return $res;
+        }
+        public function getDataUser($id_usuario){
+            $query = $this->PDO->prepare("SELECT * FROM usuarios WHERE id_usuario=:id_usuario");
+            $query->bindParam(':id_usuario', $id_usuario);
             $query->execute();
             $res = $query->fetch(PDO::FETCH_OBJ);
             return $res;

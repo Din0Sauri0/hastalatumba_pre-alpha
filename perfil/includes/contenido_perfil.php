@@ -1,5 +1,4 @@
 <?php include 'variables_perfil.php' ?>
-
 <div id="preloader">
     <div class="sk-three-bounce">
         <div class="sk-child sk-bounce1"></div>
@@ -77,81 +76,7 @@
 </div>
 <div class="offcanvas__overlay"></div>
 <div class="offcanvas__overlay-white"></div>
-<!-- Offcanvas area start -->
 
-<!--Speaker popup area start -->
-<!-- <section class="speaker__popup-area">
-    <div class="popup__wrapper">
-        <div class="popup__title-wrapper">
-            <h3 class="popup__title">Agregar historia</h3>
-        </div>
-        <div class="popup__input-wrapper">
-            <form action="#">
-                <div class="singel__input-field mb-15">
-                    <label class="input__field-text">nombre</label>
-                    <input type="text">
-                </div>
-                <div class="singel__input-field mb-15">
-                    <label class="input__field-text">Email</label>
-                    <input type="text">
-                </div>
-                <div class="singel__input-field mb-15">
-                    <label class="input__field-text">telefono</label>
-                    <input type="text">
-                </div>
-                <div class="singel__input-field mb-15">
-                    <label class="input__field-text">campo</label>
-                    <input type="text">
-                </div>
-                <div class="singel__input-field mb-15">
-                    <label class="input__field-text">campo</label>
-                    <input type="text">
-                </div>
-
-                <button class="input__btn w-100" type="submit"><i class="fa-regular fa-plus"></i>Agregar
-                    Historia</button>
-            </form>
-        </div>
-    </div>
-</section> -->
-<!--Speaker popup area end -->
-
-<!-- Event popup area start -->
-<!-- <section class="event__popup-area">
-    <div class="popup__wrapper">
-        <div class="popup__title-wrapper">
-            <h3 class="popup__title">Add Event Attendant</h3>
-        </div>
-        <div class="popup__input-wrapper">
-            <form action="#">
-                <div class="singel__input-field mb-15">
-                    <label class="input__field-text">Name</label>
-                    <input type="text">
-                </div>
-                <div class="singel__input-field mb-15">
-                    <label class="input__field-text">Email</label>
-                    <input type="email">
-                </div>
-                <div class="singel__input-field mb-15">
-                    <label class="input__field-text">Phone Number</label>
-                    <input type="text">
-                </div>
-                <div class="singel__input-field mb-15">
-                    <label class="input__field-text">Organization Name</label>
-                    <input type="text">
-                </div>
-                <div class="singel__input-field mb-15">
-                    <label class="input__field-text">Ticket ID No</label>
-                    <input type="text">
-                </div>
-
-                <button class="input__btn w-100" type="submit"><i class="fa-regular fa-plus"></i>Add
-                    Attendant</button>
-            </form>
-        </div>
-    </div>
-</section> -->
-<!-- Event popup area end -->
 
 <!-- Dashboard area start -->
 <div class="page__full-wrapper">
@@ -501,8 +426,7 @@
             </div>
         </div>
         <div class="body__overlay"></div>
-        <!-- App header area end -->
-        <!-- App side area start -->
+
         <div class="app__slide-wrapper">
             <div class="breadcrumb__area">
                 <div class="breadcrumb__wrapper mb-35">
@@ -522,19 +446,27 @@
                         </div>
                         <div class="breadcrumb__tab">
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <!-- BOTON  MIS HISTORIAS-->
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link active" id="day-tab-1" data-bs-toggle="tab"
                                         data-bs-target="#day-tab-1-pane" type="button" role="tab"
-                                        aria-controls="day-tab-1-pane" aria-selected="true"> Favoritas <i
+                                        aria-controls="day-tab-1-pane" aria-selected="true">Mis Historias</button>
+                                </li>
+                                <!-- BOTON  MIS FAVORITOS-->
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link " id="day-tab-2" data-bs-toggle="tab"
+                                        data-bs-target="#day-tab-2-pane" type="button" role="tab"
+                                        aria-controls="day-tab-2-pane" aria-selected="true"> Favoritas <i
                                             class="fas fa-heart"></i></button>
                                 </li>
+                                <!-- BOTON  MI PERFIL-->
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="day-tab-2" data-bs-toggle="tab"
-                                        data-bs-target="#day-tab-2-pane" type="button" role="tab"
-                                        aria-controls="day-tab-2-pane" aria-selected="false">Mis Datos <i
+                                    <button class="nav-link" id="day-tab-3" data-bs-toggle="tab"
+                                        data-bs-target="#day-tab-3-pane" type="button" role="tab"
+                                        aria-controls="day-tab-3-pane" aria-selected="false">Mis Datos <i
                                             class="fas fa-user"></i></button>
                                 </li>
-
+                                <!-- BOTON  AGRAGAR HISTORIA-->
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link btn btn-danger" id="day-tab-4" data-bs-toggle="tab"
                                         data-bs-target="#day-tab-4-pane" type="button" role="tab"
@@ -543,18 +475,24 @@
                                 </li>
                             </ul>
                         </div>
-                        <!-- <div class="breadcrum__button">
-                            <a class="breadcrum__btn speaker__popup-active" href="#">Agregar historia<i
-                                    class="fa-regular fa-plus"></i></a>
-                        </div> -->
+
                     </div>
                 </div>
             </div>
             <div class="speaker__area pb-60">
                 <div class="schedule__content">
+
                     <div class="tab-content" id="myTabContent">
+                        <!-- BLOQUE QuE MUESTRA TAB DE MIS HISTORIAS-->
                         <div class="tab-pane fade show active" id="day-tab-1-pane" role="tabpanel"
                             aria-labelledby="day-tab-1" tabindex="0">
+                            <div class="contenedor_sin">
+
+                                <div class="texto_sin">
+                                    <span><i class="fas fa-heart-broken"></i></span>
+                                    <span>Aun no tienes historias que hayas publicado, animate y agrega una</span>
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4">
                                     <div class="speaker__list-item mb-30">
@@ -578,6 +516,8 @@
                                                     <div class="dropdown-list" style="display: none;">
                                                         <a class="dropdown__item" href="javascript:void(0)"><i
                                                                 class="fas fa-trash-alt"></i> Eliminar</a>
+                                                        <a class="dropdown__item" href="javascript:void(0)"><i
+                                                                class="fas fa-trash-alt"></i> Editar</a>
 
                                                     </div>
                                                 </div>
@@ -586,10 +526,6 @@
                                                 <img src="assets/imagenes/portadas_historias/hombre.webp"
                                                     alt="image not found">
                                             </a>
-                                            <div class="dropdown-list">
-                                                <a class="dropdown__item" href="javascript:void(0)">Edit</a>
-                                                <a class="dropdown__item" href="javascript:void(0)">Delete</a>
-                                            </div>
                                         </div>
                                         <div class="speaker__list-content-inner">
                                             <div class="speaker__list-content">
@@ -597,190 +533,69 @@
                                                         Historia</a></h5>
                                                 <span class="speaker__author-info">autor bistoria</span>
                                             </div>
-                                            <!-- <div class="speaker__list-social">
-                                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                                                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                                            </div> -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4">
-                                    <div class="speaker__list-item mb-30">
-                                        <div class="speaker__list-thumb">
-                                            <a href="">
-                                                <img src="assets/imagenes/portadas_historias/hombre.webp"
-                                                    alt="image not found">
-                                            </a>
-                                        </div>
-                                        <div class="speaker__list-content-inner">
-                                            <div class="speaker__list-content">
-                                                <h5 class="speaker__author-title"><a href="">Nombre
-                                                        Historia</a></h5>
-                                                <span class="speaker__author-info">autor bistoria</span>
-                                            </div>
-                                            <!-- <div class="speaker__list-social">
-                                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                                                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                                            </div> -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4">
-                                    <div class="speaker__list-item mb-30">
-                                        <div class="speaker__list-thumb">
-                                            <a href="">
-                                                <img src="assets/imagenes/portadas_historias/hombre.webp"
-                                                    alt="image not found">
-                                            </a>
-                                        </div>
-                                        <div class="speaker__list-content-inner">
-                                            <div class="speaker__list-content">
-                                                <h5 class="speaker__author-title"><a href="">Nombre
-                                                        Historia</a></h5>
-                                                <span class="speaker__author-info">autor bistoria</span>
-                                            </div>
-                                            <!-- <div class="speaker__list-social">
-                                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                                                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                                            </div> -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4">
-                                    <div class="speaker__list-item mb-30">
-                                        <div class="speaker__list-thumb">
-                                            <a href="">
-                                                <img src="assets/imagenes/portadas_historias/mujer.webp"
-                                                    alt="image not found">
-                                            </a>
-                                        </div>
-                                        <div class="speaker__list-content-inner">
-                                            <div class="speaker__list-content">
-                                                <h5 class="speaker__author-title"><a href="">Nombre
-                                                        Historia</a></h5>
-                                                <span class="speaker__author-info">autor bistoria</span>
-                                            </div>
-                                            <!-- <div class="speaker__list-social">
-                                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                                                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                                            </div> -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4">
-                                    <div class="speaker__list-item mb-30">
-                                        <div class="speaker__list-thumb">
-                                            <a href="">
-                                                <img src="assets/imagenes/portadas_historias/mujer.webp"
-                                                    alt="image not found">
-                                            </a>
-                                        </div>
-                                        <div class="speaker__list-content-inner">
-                                            <div class="speaker__list-content">
-                                                <h5 class="speaker__author-title"><a href="">Nombre
-                                                        Historia</a></h5>
-                                                <span class="speaker__author-info">autor bistoria</span>
-                                            </div>
-                                            <!-- <div class="speaker__list-social">
-                                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                                                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                                            </div> -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4">
-                                    <div class="speaker__list-item mb-30">
-                                        <div class="speaker__list-thumb">
-                                            <a href="">
-                                                <img src="assets/imagenes/portadas_historias/mujer.webp"
-                                                    alt="image not found">
-                                            </a>
-                                        </div>
-                                        <div class="speaker__list-content-inner">
-                                            <div class="speaker__list-content">
-                                                <h5 class="speaker__author-title"><a href="">Nombre
-                                                        Historia</a></h5>
-                                                <span class="speaker__author-info">autor bistoria</span>
-                                            </div>
-                                            <!-- <div class="speaker__list-social">
-                                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                                                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                                            </div> -->
-                                            <div class="speaker__list-content">
-                                                <h5 class="speaker__author-title"><a href="">Nombre
-                                                        Historia</a></h5>
-                                                <span class="speaker__author-info">autor bistoria</span>
-                                            </div>
-                                            <!-- <div class="speaker__list-social">
-                                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                                                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                                            </div> -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4">
-                                    <div class="speaker__list-item mb-30">
-                                        <div class="speaker__list-thumb">
-                                            <a href="">
-                                                <img src="assets/imagenes/portadas_historias/mujer.webp"
-                                                    alt="image not found">
-                                            </a>
-                                        </div>
-                                        <div class="speaker__list-content-inner">
-                                            <div class="speaker__list-content">
-                                                <h5 class="speaker__author-title"><a href="">Nombre
-                                                        Historia</a></h5>
-                                                <span class="speaker__author-info">autor bistoria</span>
-                                            </div>
-                                            <!-- <div class="speaker__list-social">
-                                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                                                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                                            </div> -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4">
-                                    <div class="speaker__list-item mb-30">
-                                        <div class="speaker__list-thumb">
-                                            <a href="">
-                                                <img src="assets/imagenes/portadas_historias/mujer.webp"
-                                                    alt="image not found">
-                                            </a>
-                                        </div>
-                                        <div class="speaker__list-content-inner">
-                                            <div class="speaker__list-content">
-                                                <h5 class="speaker__author-title"><a href="">Nombre
-                                                        Historia</a></h5>
-                                                <span class="speaker__author-info">autor bistoria</span>
-                                            </div>
-                                            <!-- <div class="speaker__list-social">
-                                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                                                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                                            </div> -->
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="day-tab-2-pane" role="tabpanel" aria-labelledby="day-tab-2"
+                        <!-- BLOQUE QYE MUESTRA TAB AVORITAS -->
+                        <div class="tab-pane fade " id="day-tab-2-pane" role="tabpane2" aria-labelledby="day-tab-2"
+                            tabindex="0">
+                            <div class="contenedor_sin">
+
+                                <div class="texto_sin">
+                                    <span><i class="fas fa-heart-broken"></i></span>
+                                    <span>Aun no tienes historias que te haya gustado</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4">
+                                    <div class="speaker__list-item mb-30">
+                                        <div class="speaker__list-thumb">
+                                            <div class="card__header-dropdown">
+                                                <div class="dropdown">
+                                                    <button>
+                                                        <svg width="14" height="4" viewBox="0 0 14 4" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M2 0.75C2.69036 0.75 3.25 1.30964 3.25 2C3.25 2.69036 2.69036 3.25 2 3.25C1.30964 3.25 0.75 2.69036 0.75 2C0.75 1.30964 1.30964 0.75 2 0.75Z"
+                                                                fill="#7A7A7A"></path>
+                                                            <path
+                                                                d="M7 0.75C7.69036 0.75 8.25 1.30964 8.25 2C8.25 2.69036 7.69036 3.25 7 3.25C6.30964 3.25 5.75 2.69036 5.75 2C5.75 1.30964 6.30964 0.75 7 0.75Z"
+                                                                fill="#7A7A7A"></path>
+                                                            <path
+                                                                d="M13.25 2C13.25 1.30964 12.6904 0.75 12 0.75C11.3096 0.75 10.75 1.30964 10.75 2C10.75 2.69036 11.3096 3.25 12 3.25C12.6904 3.25 13.25 2.69036 13.25 2Z"
+                                                                fill="#7A7A7A"></path>
+                                                        </svg>
+                                                    </button>
+                                                    <div class="dropdown-list" style="display: none;">
+                                                        <a class="dropdown__item" href="javascript:void(0)"><i
+                                                                class="fas fa-trash-alt"></i> Eliminar </a>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a href="">
+                                                <img src="assets/imagenes/portadas_historias/hombre.webp"
+                                                    alt="image not found">
+                                            </a>
+                                        </div>
+                                        <div class="speaker__list-content-inner">
+                                            <div class="speaker__list-content">
+                                                <h5 class="speaker__author-title"><a href="">Nombre
+                                                        Historia</a></h5>
+                                                <span class="speaker__author-info">autor bistoria</span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- BLOQUE QYE MUESTRA TAB MI POERFIL -->
+                        <div class="tab-pane fade" id="day-tab-3-pane" role="tabpanel" aria-labelledby="day-tab-2"
                             tabindex="0">
                             <div class="row">
 
@@ -848,7 +663,7 @@
                                 </div>
                             </div>
                         </div>
-
+                        <!-- BLOQUE QYE MUESTRA TAB AGREGAR HISTORIA -->
                         <div class="tab-pane fade" id="day-tab-4-pane" role="tabpanel" aria-labelledby="day-tab-4"
                             tabindex="0">
                             <div class="row">
@@ -863,15 +678,15 @@
                                         <form action="store.php" method="POST">
                                             <div class="singel__input-field mb-15">
                                                 <label class="input__field-text">Título Historia</label>
-                                                <input name="titulo" type="text">
+                                                <input type="text" name="titulo">
                                             </div>
                                             <div class="singel__input-field mb-15">
                                                 <label class="input__field-text">Seleccion Categoria</label>
-                                                <input name="categoria" type="text">
+                                                <input type="text" name="categoria">
                                             </div>
                                             <div class="event__input mb-15">
                                                 <label class="input__field-text">Libérate</label>
-                                                <textarea name="confecion" placeholder="detalles"></textarea>
+                                                <textarea placeholder="detalles" name="titulo"></textarea>
                                             </div>
                                             <button class="input__btn w-100" type="submit">
                                                 <li class="fas fa-upload" aria-hidden="true"></li> Publicar Historia
