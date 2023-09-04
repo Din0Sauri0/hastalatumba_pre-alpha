@@ -1,4 +1,12 @@
-<?php include('includes/variables_perfil.php') ?>
+<?php
+session_start();
+include('includes/variables_perfil.php');
+if(isset($_SESSION['id_usuario'])){
+    
+}else{
+    return header('Location: ../tests/form.php');
+}
+?>
 
 <!DOCTYPE html>
 <html class="no-js" lang="es">

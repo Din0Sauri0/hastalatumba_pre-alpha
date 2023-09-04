@@ -1,4 +1,10 @@
-<?php include 'variables_perfil.php' ?>
+<?php 
+include 'variables_perfil.php';
+require_once('../controller/usuarioController.php');
+$controller = new usuarioController();
+$res = $controller->userConfeciones($_SESSION['id_usuario']);
+$userData = $controller->getDataUser($_SESSION['id_usuario']);
+?>
 <div id="preloader">
     <div class="sk-three-bounce">
         <div class="sk-child sk-bounce1"></div>
@@ -125,7 +131,7 @@
                 </ul>
 
                 <div class="sidebar__profile mb-50">
-                    <a href=""><i class="flaticon-log-out-3"></i><span class="links_name">Cerrar
+                    <a href="../perfil/logout.php"><i class="flaticon-log-out-3"></i><span class="links_name">Cerrar
                             sesión</span></a>
                 </div>
                 <div class="sidebar__copyright">
@@ -394,7 +400,7 @@
                                     <img src="assets/imagenes/user/1/01.png" alt="imge not found">
                                 </div>
                                 <div class="user__content">
-                                    <span>@lloron123s</span>
+                                    <span>@<?php echo $userData->alias ?></span>
                                 </div>
                             </div>
                         </a>
@@ -416,7 +422,7 @@
 
 
                                 <li>
-                                    <a href="">
+                                    <a href="../perfil/logout.php">
                                         <i class="fas fa-sign-out-alt"></i>Cerrar sesion</a>
                                 </li>
                             </ul>
@@ -439,7 +445,7 @@
                                 <nav>
                                     <ul>
                                         <li><span><a href="">Purgatprio</a></span></li>
-                                        <li class="active"><span>Mi Perfil @lloron</span></li>
+                                        <li class="active"><span>Mi Perfil @<?php echo $userData->alias ?></span></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -486,64 +492,81 @@
                         <!-- BLOQUE QuE MUESTRA TAB DE MIS HISTORIAS-->
                         <div class="tab-pane fade show active" id="day-tab-1-pane" role="tabpanel"
                             aria-labelledby="day-tab-1" tabindex="0">
-                            <div class="contenedor_sin">
+                            <?php
+                            if(empty($res)){
+                            ?>
+                                <div class="contenedor_sin">
 
-                                <div class="texto_sin">
-                                    <span><i class="fas fa-heart-broken"></i></span>
-                                    <span>Aun no tienes historias que hayas publicado, animate y agrega una</span>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4">
-                                    <div class="speaker__list-item mb-30">
-                                        <div class="speaker__list-thumb">
-                                            <div class="card__header-dropdown">
-                                                <div class="dropdown">
-                                                    <button>
-                                                        <svg width="14" height="4" viewBox="0 0 14 4" fill="none"
-                                                            xmlns="http://www.w3.org/2000/svg">
-                                                            <path
-                                                                d="M2 0.75C2.69036 0.75 3.25 1.30964 3.25 2C3.25 2.69036 2.69036 3.25 2 3.25C1.30964 3.25 0.75 2.69036 0.75 2C0.75 1.30964 1.30964 0.75 2 0.75Z"
-                                                                fill="#7A7A7A"></path>
-                                                            <path
-                                                                d="M7 0.75C7.69036 0.75 8.25 1.30964 8.25 2C8.25 2.69036 7.69036 3.25 7 3.25C6.30964 3.25 5.75 2.69036 5.75 2C5.75 1.30964 6.30964 0.75 7 0.75Z"
-                                                                fill="#7A7A7A"></path>
-                                                            <path
-                                                                d="M13.25 2C13.25 1.30964 12.6904 0.75 12 0.75C11.3096 0.75 10.75 1.30964 10.75 2C10.75 2.69036 11.3096 3.25 12 3.25C12.6904 3.25 13.25 2.69036 13.25 2Z"
-                                                                fill="#7A7A7A"></path>
-                                                        </svg>
-                                                    </button>
-                                                    <div class="dropdown-list" style="display: none;">
-                                                        <a class="dropdown__item" href="javascript:void(0)"><i
-                                                                class="fas fa-trash-alt"></i> Eliminar</a>
-                                                        <a class="dropdown__item" href="javascript:void(0)"><i
-                                                                class="fas fa-trash-alt"></i> Editar</a>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <a href="">
-                                                <img src="assets/imagenes/portadas_historias/hombre.webp"
-                                                    alt="image not found">
-                                            </a>
-                                        </div>
-                                        <div class="speaker__list-content-inner">
-                                            <div class="speaker__list-content">
-                                                <h5 class="speaker__author-title"><a href="">Nombre
-                                                        Historia</a></h5>
-                                                <span class="speaker__author-info">autor bistoria</span>
-                                            </div>
-
-                                        </div>
+                                    <div class="texto_sin">
+                                        <span><i class="fas fa-heart-broken"></i></span>
+                                        <span>Aun no tienes historias que hayas publicado, animate y agrega una</span>
                                     </div>
                                 </div>
+                            <?php
+                            }
+                            ?>
+                            
+                            <div class="row">
+                                <?php
+                                foreach ($res as $data) {
+                                ?>
+                                    <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4">
+                                        <div class="speaker__list-item mb-30">
+                                            <div class="speaker__list-thumb">
+                                                <div class="card__header-dropdown">
+                                                    <div class="dropdown">
+                                                        <button>
+                                                            <svg width="14" height="4" viewBox="0 0 14 4" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M2 0.75C2.69036 0.75 3.25 1.30964 3.25 2C3.25 2.69036 2.69036 3.25 2 3.25C1.30964 3.25 0.75 2.69036 0.75 2C0.75 1.30964 1.30964 0.75 2 0.75Z"
+                                                                    fill="#7A7A7A"></path>
+                                                                <path
+                                                                    d="M7 0.75C7.69036 0.75 8.25 1.30964 8.25 2C8.25 2.69036 7.69036 3.25 7 3.25C6.30964 3.25 5.75 2.69036 5.75 2C5.75 1.30964 6.30964 0.75 7 0.75Z"
+                                                                    fill="#7A7A7A"></path>
+                                                                <path
+                                                                    d="M13.25 2C13.25 1.30964 12.6904 0.75 12 0.75C11.3096 0.75 10.75 1.30964 10.75 2C10.75 2.69036 11.3096 3.25 12 3.25C12.6904 3.25 13.25 2.69036 13.25 2Z"
+                                                                    fill="#7A7A7A"></path>
+                                                            </svg>
+                                                        </button>
+                                                        <div class="dropdown-list" style="display: none;">
+                                                            <a class="dropdown__item" href="javascript:void(0)"><i
+                                                                    class="fas fa-trash-alt"></i> Eliminar</a>
+                                                            <a class="dropdown__item" href="javascript:void(0)"><i
+                                                                    class="fas fa-trash-alt"></i> Editar</a>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a href="">
+                                                    <?php if ($userData->genero == 'Masculino') { ?>
+                                                        <img src="assets/imagenes/portadas_historias/hombre.webp" alt="image not found">
+                                                    <?php
+                                                    } elseif ($userData->genero == 'Femenino') { ?>
+                                                        <img src="assets/imagenes/portadas_historias/mujer.webp" alt="image not found">
+                                                    <?php
+                                                    } ?>
+                                                </a>
+                                            </div>
+                                            <div class="speaker__list-content-inner">
+                                                <div class="speaker__list-content">
+                                                    <h5 class="speaker__author-title"><a href=""><?php echo $data->titulo ?></a></h5>
+                                                    <span class="speaker__author-info"><?php echo $userData->alias ?></span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php
+                                }
+                                ?>
                             </div>
                         </div>
                         <!-- BLOQUE QYE MUESTRA TAB AVORITAS -->
                         <div class="tab-pane fade " id="day-tab-2-pane" role="tabpane2" aria-labelledby="day-tab-2"
                             tabindex="0">
-                            <div class="contenedor_sin">
 
+                            <div class="contenedor_sin">
                                 <div class="texto_sin">
                                     <span><i class="fas fa-heart-broken"></i></span>
                                     <span>Aun no tienes historias que te haya gustado</span>
@@ -622,11 +645,11 @@
                                                 </div>
                                                 <div class="singel__input-field mb-15">
                                                     <label class="input__field-text">Mi pseudónimo</label>
-                                                    <input type="text" placeholder="pseudonimo">
+                                                    <input type="text" placeholder="pseudonimo" value="<?php echo $userData->alias ?>">
                                                 </div>
                                                 <div class="event__input mb-15">
                                                     <label class="input__field-text">Descripción</label>
-                                                    <textarea placeholder="detalles"></textarea>
+                                                    <textarea placeholder="detalles"><?php echo $userData->descripcion ?></textarea>
 
                                                 </div>
 
@@ -648,7 +671,7 @@
                                                 <form action="#">
                                                     <div class="singel__input-field mb-15">
                                                         <label class="input__field-text">Email</label>
-                                                        <input type="text" placeholder="email">
+                                                        <input type="text" placeholder="email" value='<?php echo $userData->email ?>'>
                                                     </div>
                                                     <button type="submit" class="unfield__input-btn w-100 mb-20"><i
                                                             class="fas fa-pen"></i>Editar PErfíl</button>
@@ -675,7 +698,7 @@
 
                                     </div>
                                     <div class="pt-25">
-                                        <form action="store.php" method="POST">
+                                        <form action="store_publicacion.php" method="POST">
                                             <div class="singel__input-field mb-15">
                                                 <label class="input__field-text">Título Historia</label>
                                                 <input type="text" name="titulo">
@@ -686,7 +709,7 @@
                                             </div>
                                             <div class="event__input mb-15">
                                                 <label class="input__field-text">Libérate</label>
-                                                <textarea placeholder="detalles" name="titulo"></textarea>
+                                                <textarea placeholder="detalles" name="confecion"></textarea>
                                             </div>
                                             <button class="input__btn w-100" type="submit">
                                                 <li class="fas fa-upload" aria-hidden="true"></li> Publicar Historia
