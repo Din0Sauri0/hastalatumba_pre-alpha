@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    require_once("../../controller/confecionController.php");
+    $controller = new confecionController();
+    $res = $controller->getConfecionById($_GET['id']);
+?>
+
 <section>
     <div class="container">
         <div class="row">
@@ -10,7 +17,6 @@
                             <a href="#" class="cs-post_avatar">Lujuria</a>
                         </div>
                         <h2 class="cs-post_title">
-                            <?php echo $titulo_historia ?>
                         </h2>
                         <p>Laura era una mujer encantadora, con una sonrisa radiante y una personalidad carismática.
                             Desde el momento en que cruzaron miradas, hubo una conexión instantánea entre Anónimo334

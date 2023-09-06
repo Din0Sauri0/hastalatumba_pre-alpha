@@ -8,7 +8,7 @@
         }
         public function registrar($nombre, $alias, $email, $genero, $pass, $descripcion){
             $id = $this->model->insertar($nombre, $alias, $email, $genero, $pass, $descripcion);
-            return ($id!=false) ? header('Location:registro.php') : 'false';
+            return ($id!=false) ? header('Location:registro.php') : false;
         }
         public function login($email, $pass){
             $res = $this->model->login($email, $pass);

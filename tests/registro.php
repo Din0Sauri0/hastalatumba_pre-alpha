@@ -90,7 +90,6 @@ body {
                 <option>--SELECCIONE UN GENERO--</option>
                 <option value="Masculino">Masculino</option>
                 <option value="Femenino">Femenino</option>
-
             </select>
             <input type="password" name="pass" placeholder="password" />
             <textarea name="descripcion" placeholder="descriopcion"></textarea>

@@ -126,7 +126,7 @@ body {
             <input type="text" name="email" placeholder="email/pesudonimo" />
             <input type="password" name="pass" placeholder="password" />
             <button type="submit">login</button>
-            <p class="message">No estas regdstrado?? <a href="#">Ingresa al club</a></p>
+            <p class="message">No estas regdstrado?? <a href="registro.php">Ingresa al club</a></p>
         </form>
     </div>
 </div>

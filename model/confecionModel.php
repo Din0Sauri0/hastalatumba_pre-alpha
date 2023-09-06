@@ -13,6 +13,26 @@ class confecionModel{
         $query->bindParam(':confecion', $confecion);
         $query->bindParam(':id_usuario_id', $id_usuario_id);
         return ($query->execute()) ? $this->PDO->lastInsertId() : false;
+    }
+    public function delete($id){
+        $query = $this->PDO->prepare("DELETE FROM confeciones WHERE id_confecion=:id");
+        $query->bindParam(':id', $id);
+        return ($query->execute()) ? true : false;
+    }
+    public function getConfecionById($id_confecion){
+        try{
+            $query = $this->PDO->prepare("SELECT * FROM confeciones WHERE id=:id");
+            $query->bindParam(':id', $id_confecion);
+            $query->execute();
+            if($query->rowCount() > 0){
+                return $query->fetch(PDO::FETCH_OBJ);
+            }else{
+                return 'No se han encontrado resultado';
+            }
+        }catch(PDOException $err){
+            return $err->getMessage();
+        }
+        
 
     }
 }
