@@ -1,7 +1,7 @@
 <?php include('variables_historia.php') ?>
 
 <head>
-    <?php include('../../includes/ga4.php') ?>
+
     <!-- Meta Tags -->
     <meta charset="utf-8">
     <meta http-equiv="Cache-Control" content="public, max-age=3600">

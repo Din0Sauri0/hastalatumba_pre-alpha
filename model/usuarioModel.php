@@ -16,6 +16,20 @@
             $query->bindParam(":descripcion", $descripcion);
             return ($query->execute()) ? $this->PDO->lastInsertId() : false;
         }
+        public function update($genero, $alias, $descripcion, $email, $id){
+            try{
+                $query = $this->PDO->prepare("UPDATE usuarios SET genero=:genero, alias=:alias, descripcion=:descripcion, email=:email WHERE id_usuaio=:id");
+                $query->bindParam(':genero', $genero);
+                $query->bindParam(':alias', $alias);
+                $query->bindParam(':descripcion', $descripcion);
+                $query->bindParam(':email', $email);
+                $query->bindParam(':id', $id);
+                return ($query->execute()) ? true : false;
+            }catch(PDOException $err){
+                return $err->getMessage();
+            }
+
+        }
         public function login($email, $pass){
             $query = $this->PDO->prepare("SELECT * FROM usuarios WHERE email=:email AND pass=:pass");
             $query->bindParam(':email', $email);

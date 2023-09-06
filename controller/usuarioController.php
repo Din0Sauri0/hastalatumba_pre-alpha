@@ -10,6 +10,10 @@
             $id = $this->model->insertar($nombre, $alias, $email, $genero, $pass, $descripcion);
             return ($id!=false) ? header('Location:registro.php') : false;
         }
+        public function update($genero, $alias, $descripcion, $email, $id){
+            $res = $this->model->update($genero, $alias, $descripcion, $email, $id);
+            return ($res !=false) ? header('Location: ../perfil/index.php') : 'Ha ocurrido un error';
+        }
         public function login($email, $pass){
             $res = $this->model->login($email, $pass);
             if($res == false){

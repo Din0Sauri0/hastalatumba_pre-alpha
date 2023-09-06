@@ -2,7 +2,7 @@
 class confecionController{
     private $model;
     public function __construct(){
-        require_once('../model/confecionModel.php');
+        require_once('/xampp/htdocs/hastalatumba_pre-alpha/model/confecionModel.php');
         $this->model = new confecionModel();
     }
     public function registrar($titulo, $categoria, $confecion, $id_usuario_id){

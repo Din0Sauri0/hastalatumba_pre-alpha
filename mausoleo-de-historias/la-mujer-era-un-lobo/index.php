@@ -8,7 +8,7 @@
     <?php include('../../includes_index/menu.php') ?>
     <!-- Start Header Section -->
 
-    <?php include('../../includes_index/header.php') ?>
+
     <!-- End Header Section -->
 
     <!--FIN MENU lateral HEADER-->
