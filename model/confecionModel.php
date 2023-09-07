@@ -25,8 +25,21 @@ class confecionModel{
             $query->bindParam(':id', $id_confecion);
             $query->execute();
             if($query->rowCount() > 0){
-                return $query->fetch(PDO::FETCH_OBJ);
+                //return $query->fetch(PDO::FETCH_OBJ);
                 //crear consulta para obtener el alias del usuario que publico y enviarlo como un objeto de objetos a la vista
+                $res = $query->fetch(PDO::FETCH_OBJ);
+                $id_usuario_id = $res->id_usuario_id;
+                $data = array(
+                    'confecion' => $res
+                );
+                $query = $this->PDO->prepare("SELECT alias FROM usuarios INNER JOIN confeciones ON id_usuario = :id");
+                $query->bindParam(':id', $id_usuario_id);
+                $query->execute();
+                if($query->rowCount() > 0){
+                    $data['usuario'] = $query->fetch(PDO::FETCH_OBJ);
+                    return $data;
+                }
+                
             }else{
                 return 'No se han encontrado resultado';
             }
