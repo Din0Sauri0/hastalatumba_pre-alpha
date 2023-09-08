@@ -6,14 +6,15 @@
             $conn = new DB();
             $this->PDO = $conn->conectar();
         }
-        public function insertar($nombre, $alias, $email, $genero, $pass, $descripcion){
-            $query = $this->PDO->prepare("INSERT INTO usuarios VALUES (null, :nombre, :alias, :email, :genero, :pass, :descripcion)");
+        public function insertar($nombre, $alias, $email, $genero, $pass, $descripcion, $fecha_actual){
+            $query = $this->PDO->prepare("INSERT INTO usuarios VALUES (null, :nombre, :alias, :email, :genero, :pass, :descripcion, :fecha_actual");
             $query->bindParam(":nombre", $nombre);
             $query->bindParam(":alias", $alias);
             $query->bindParam(":email", $email);
             $query->bindParam(":genero", $genero);
             $query->bindParam(":pass", $pass);
             $query->bindParam(":descripcion", $descripcion);
+            $query->bindParam("fecha_actual", $fecha_actual);
             return ($query->execute()) ? $this->PDO->lastInsertId() : false;
         }
         public function update($genero, $alias, $descripcion, $email, $id){

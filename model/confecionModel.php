@@ -7,7 +7,7 @@ class confecionModel{
         $this->PDO = $conn->conectar();
     }
     public function insertar($titulo, $categoria, $confecion, $id_usuario_id){
-        $query = $this->PDO->prepare("INSERT INTO confeciones VALUES (null, :titulo, :categoria, :confecion, :id_usuario_id)");
+        $query = $this->PDO->prepare("INSERT INTO confeciones VALUES (null, :titulo, :categoria, :confecion, :id_usuario_id, 0)");
         $query->bindParam(':titulo', $titulo);
         $query->bindParam(':categoria', $categoria);
         $query->bindParam(':confecion', $confecion);

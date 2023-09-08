@@ -7,7 +7,8 @@
             $this->model = new usuarioModel();
         }
         public function registrar($nombre, $alias, $email, $genero, $pass, $descripcion){
-            $id = $this->model->insertar($nombre, $alias, $email, $genero, $pass, $descripcion);
+            $fecha_actual = date("Y-m-d");
+            $id = $this->model->insertar($nombre, $alias, $email, $genero, $pass, $descripcion, $fecha_actual);
             return ($id!=false) ? header('Location:registro.php') : false;
         }
         public function update($genero, $alias, $descripcion, $email, $id){
